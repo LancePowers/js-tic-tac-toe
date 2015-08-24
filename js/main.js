@@ -66,7 +66,9 @@ Board.prototype.checkWinner = function(arr){
 }
 Game.prototype.resetBoard =function(){
   this.board = new Board();
-  this.updateDom('&nbsp;');
+  this.board.moveCount = 0;
+  // this.updateDom('&nbsp;');
+  this.turnCounter = 0;
 }
 Game.prototype.nextPlayer = function(){
  this.board.moveCount ++;
@@ -77,7 +79,7 @@ Game.prototype.updateScore = function(){
   var winner = this.players[this.turnCounter];
   winner.score++;
   alert(winner.id + "\'s WIN!!!");
-  this.updateDom(winner.id);
+  // this.updateDom(winner.id);
   winner.$cellID.html(winner.score);
 }
 Game.prototype.updateDom = function (string) {
@@ -86,3 +88,10 @@ Game.prototype.updateDom = function (string) {
   }  // body...
 };
 var game = new Game();
+
+// module.exports = {
+//   Game: Game,
+//   Board: Board,
+//   Player: Player,
+//   Cell: Cell
+// }

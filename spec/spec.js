@@ -1,8 +1,8 @@
 var code = require('../js/main.js');
 
 
-describe('', function() {
-  it('', function() {
-
+describe('true', function() {
+  it('should equal true', function() {
+    expect('true').toEqual('true');
   });
 });
